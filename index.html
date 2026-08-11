@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bercocok Tanam Indonesia</title>
+<meta name="description" content="Kumpulan video bercocok tanam berepisode, dari bibit sampai panen.">
+
+<!-- Open Graph (preview saat link dibagikan ke Facebook/WhatsApp/Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bercocok Tanam Indonesia">
+<meta property="og:description" content="Kumpulan video bercocok tanam berepisode, dari bibit sampai panen.">
+<meta property="og:url" content="https://videobercocoktanam2026.github.io/kebun-indonesia/">
+<meta property="og:image" content="https://videobercocoktanam2026.github.io/kebun-indonesia/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bercocok Tanam Indonesia">
+<meta name="twitter:description" content="Kumpulan video bercocok tanam berepisode, dari bibit sampai panen.">
+<meta name="twitter:image" content="https://videobercocoktanam2026.github.io/kebun-indonesia/cover.jpg">
+
+<!-- IKLAN ADSTERRA — POPUNDER (aktif di seluruh halaman) -->
+<script src="https://pl30677988.effectivecpmnetwork.com/3b/37/e2/3b37e254b77bbbdd9815f86b60261fe5.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --soil:#2a2117;
+    --cream:#f3ecda;
+    --cream-2:#eae1c9;
+    --leaf-deep:#3c6b2f;
+    --leaf-mid:#6b9a4c;
+    --sprout:#a9ce7c;
+    --sunflower:#e3a73e;
+    --clay:#b5623a;
+    --font-display:'Fraunces', serif;
+    --font-body:'Work Sans', sans-serif;
+    --font-mono:'Space Mono', monospace;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--soil);
+    font-family:var(--font-body);
+    line-height:1.55;
+  }
+
+  a{ color:inherit; }
+
+  /* ---------- header: seed-packet band ---------- */
+  header.packet{
+    background:var(--soil);
+    color:var(--cream);
+    padding:18px 20px 34px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.packet::after{
+    content:'';
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:6px;
+    background:repeating-linear-gradient(90deg,var(--sunflower) 0 18px, var(--leaf-mid) 18px 36px);
+  }
+  .packet-inner{
+    max-width:1100px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--sprout);
+    margin:0 0 10px;
+  }
+  h1.site-title{
+    font-family:var(--font-display);
+    font-optical-sizing:auto;
+    font-weight:700;
+    font-size:clamp(34px,6vw,58px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  h1.site-title em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--sunflower);
+  }
+  .tagline{
+    font-size:15px;
+    color:var(--cream-2);
+    max-width:520px;
+    margin:14px auto 0;
+  }
+
+  /* ---------- ad slot: top banner ---------- */
+  .ad-slot{
+    max-width:1100px;
+    margin:22px auto;
+    padding:0 20px;
+    text-align:center;
+  }
+  .ad-desktop{ display:block; }
+  .ad-mobile{ display:none; }
+  @media (max-width:760px){
+    .ad-desktop{ display:none; }
+    .ad-mobile{ display:block; }
+  }
+
+  /* ---------- main ---------- */
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:10px 20px 60px;
+  }
+
+  .intro{
+    text-align:center;
+    padding:26px 10px 6px;
+  }
+  .intro p{
+    max-width:560px;
+    margin:0 auto;
+    color:#4a4030;
+    font-size:15px;
+  }
+
+  /* ---------- petak tanam: grid 4 video per baris ---------- */
+  .plot-grid{
+    margin-top:26px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px 18px;
+  }
+  @media (max-width:900px){
+    .plot-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:520px){
+    .plot-grid{ grid-template-columns:1fr; }
+  }
+
+  .card{
+    background:#fffdf7;
+    border:1px solid #e4d9b8;
+    border-radius:3px;
+    padding:12px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+  }
+  .card.latest{ border-color:var(--sunflower); }
+  .badge-baru{
+    position:absolute;
+    top:-11px;
+    right:12px;
+    background:var(--sunflower);
+    color:var(--soil);
+    font-family:var(--font-mono);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.06em;
+    padding:3px 8px;
+    border-radius:2px;
+    box-shadow:0 2px 0 var(--clay);
+    z-index:2;
+  }
+  .card-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:#8a7c58;
+    margin:10px 0 6px;
+    letter-spacing:.02em;
+    gap:6px;
+  }
+  .card-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:16px;
+    margin:0 0 6px;
+    line-height:1.28;
+  }
+  .card-desc{
+    font-size:12.5px;
+    color:#4a4030;
+    margin:0;
+  }
+
+  .video-frame{
+    position:relative;
+    display:block;
+    width:100%;
+    padding-top:56.25%;
+    background:var(--soil);
+    border-radius:2px;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .video-frame iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
+  .video-thumb{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+  }
+  .video-frame .play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:rgba(42,33,23,0.72);
+    border:2px solid var(--sunflower);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .video-frame:hover .play-btn{
+    background:var(--clay);
+    transform:translate(-50%,-50%) scale(1.06);
+  }
+  .video-frame .play-btn svg{
+    width:16px;
+    height:16px;
+    fill:var(--cream);
+    margin-left:2px;
+  }
+
+  /* ---------- baris iklan di antara petak ---------- */
+  .ad-row{
+    grid-column:1 / -1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    padding:14px 0;
+    border-top:1px dashed #d8cca6;
+    border-bottom:1px dashed #d8cca6;
+  }
+  .ad-row .ad-label{
+    font-family:var(--font-mono);
+    font-size:9px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#a89a72;
+  }
+  .ad-row iframe{ border:0; }
+
+  /* ---------- empty state ---------- */
+  .empty{
+    grid-column:1 / -1;
+    text-align:center;
+    padding:40px 20px;
+    color:#8a7c58;
+    font-family:var(--font-mono);
+    font-size:13px;
+    border:1px dashed #c9bd9c;
+    border-radius:3px;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--soil);
+    color:var(--cream-2);
+    padding:36px 20px 90px;
+    text-align:center;
+    font-size:13px;
+  }
+  footer .foot-title{
+    font-family:var(--font-display);
+    font-size:20px;
+    color:var(--cream);
+    margin-bottom:6px;
+  }
+  .smartlink-slot{
+    margin-top:18px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:#8a9a72;
+    border-top:1px dashed #4a4030;
+    padding-top:16px;
+  }
+
+  /* ---------- socialbar fixed slot ---------- */
+  #socialbar-slot{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    z-index:999;
+  }
+</style>
+</head>
+<body>
+
+<header class="packet">
+  <div class="packet-inner">
+    <p class="eyebrow">Catatan Video &middot; Episode Berkebun</p>
+    <h1 class="site-title">Bercocok Tanam <em>Indonesia</em></h1>
+    <p class="tagline">Dari bibit sampai panen — cara berkebun ala Indonesia, satu episode setiap kali.</p>
+  </div>
+</header>
+
+<!-- IKLAN ADSTERRA — BANNER 728x90 (desktop) / 320x50 (mobile) -->
+<div class="ad-slot">
+  <div class="ad-desktop" id="ad-top-728x90"></div>
+  <div class="ad-mobile" id="ad-top-320x50"></div>
+</div>
+
+<main>
+  <div class="intro">
+    <p>Video ditanam 4 dalam satu bedengan. Video terbaru selalu ada di bedengan paling atas.</p>
+  </div>
+
+  <div class="plot-grid" id="feed"></div>
+</main>
+
+<footer>
+  <p class="foot-title">Bercocok Tanam Indonesia</p>
+  <p>Semua video ditayangkan lewat Google Drive. Episode baru menyusul setiap minggu.</p>
+  <div class="smartlink-slot">
+    <a href="https://www.effectivecpmnetwork.com/hqe2p37ibn?key=f8ce79e82a846533d89c5967aaa9e5d7" target="_blank" rel="nofollow noopener">Rekomendasi untuk kamu</a>
+  </div>
+</footer>
+
+<!-- IKLAN ADSTERRA — SOCIAL BAR -->
+<div id="socialbar-slot"></div>
+<script src="https://pl30677990.effectivecpmnetwork.com/41/e6/4f/41e64f126b33b1b3fa16856e129eac92.js"></script>
+
+<script>
+  /* =====================================================================
+     DAFTAR VIDEO
+     Cara menambah video baru: salin salah satu blok { ... } di bawah,
+     tempel PALING ATAS di dalam array VIDEOS (posisi paling awal),
+     lalu isi 4 bagian ini:
+       judul     -> judul video
+       deskripsi -> ringkasan singkat video (boleh dikosongkan "")
+       driveLink -> link Google Drive video (link share biasa juga bisa,
+                    ID-nya akan diambil otomatis)
+       tanggal   -> tanggal upload, format bebas misalnya "5 Agustus 2026"
+     Video paling atas di array = video paling baru = tampil paling awal
+     di bedengan (grid 4 video per baris).
+     ===================================================================== */
+  const VIDEOS = [
+    {
+      judul: "Bercocok Tanam Indonesia Part 2",
+      deskripsi: "",
+      driveLink: "https://drive.google.com/file/d/1Ql5ThTmXjziyNnwdB05owd-cqRUtPyVv/view",
+      tanggal: "11 Agustus 2026"
+    },
+    {
+      judul: "Bercocok Tanam Indonesia Part 1",
+      deskripsi: "",
+      driveLink: "https://drive.google.com/file/d/1pKgliHlixiTt-AkONp4iCTNXQuCv5WjL/view",
+      tanggal: "10 Agustus 2026"
+    }
+  ];
+
+  /* =====================================================================
+     KODE IKLAN ADSTERRA
+     Semua key di bawah sudah dari akun kamu. Kalau suatu saat mau ganti
+     salah satu unit iklan, cukup ganti nilai "key" di sini.
+     ===================================================================== */
+  const BANNER_ADS = [
+    { key:'0e40ba1dba3a8f141432b1fab8600c41', width:300, height:250 }, // 300x250
+    { key:'337feed2239192dfb25dbe9bd9125be5', width:160, height:300 }, // 160x300
+    { key:'22d5eb295bd10a3b8cd2716d507e8a06', width:160, height:600 }, // 160x600
+    { key:'f947d5407c089e1e084091836a5c5dd7', width:468, height:60  }, // 468x60
+    { key:'d193d159f6ead21ab2fd4d86b506bc2e', width:728, height:90  }  // 728x90
+  ];
+  const NATIVE_AD_KEY = '98dcae4f009cb31f13e8cb6fe35988ec';
+
+  // Menulis iklan banner (format atOptions) ke dalam iframe terpisah,
+  // supaya aman dipasang secara dinamis lewat JavaScript.
+  function renderBannerAd(container, ad){
+    const iframe = document.createElement('iframe');
+    iframe.style.width = ad.width + 'px';
+    iframe.style.height = ad.height + 'px';
+    iframe.style.maxWidth = '100%';
+    iframe.scrolling = 'no';
+    container.appendChild(iframe);
+    const doc = iframe.contentWindow.document;
+    doc.open();
+    doc.write(
+      '<script>atOptions={"key":"' + ad.key + '","format":"iframe","height":' + ad.height + ',"width":' + ad.width + ',"params":{}};<\/script>' +
+      '<script src="https://www.highperformanceformat.com/' + ad.key + '/invoke.js"><\/script>'
+    );
+    doc.close();
+  }
+
+  // Native banner dipasang langsung ke DOM (bukan lewat document.write)
+  // supaya tampilannya mengikuti gaya halaman.
+  function renderNativeAd(container){
+    const holder = document.createElement('div');
+    holder.id = 'container-' + NATIVE_AD_KEY;
+    container.appendChild(holder);
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = 'https://pl30677989.effectivecpmnetwork.com/' + NATIVE_AD_KEY + '/invoke.js';
+    container.appendChild(script);
+  }
+
+  // Menyisipkan satu baris iklan penuh lebar setelah sebuah video.
+  function insertAdRow(feed, adRowIndex){
+    const wrap = document.createElement('div');
+    wrap.className = 'ad-row';
+    wrap.innerHTML = '<span class="ad-label">Iklan</span>';
+    feed.appendChild(wrap);
+
+    const rotationLength = BANNER_ADS.length + 1; // + 1 untuk native banner
+    const slot = adRowIndex % rotationLength;
+    if(slot === BANNER_ADS.length){
+      renderNativeAd(wrap);
+    } else {
+      renderBannerAd(wrap, BANNER_ADS[slot]);
+    }
+  }
+
+  function extractDriveId(link){
+    const patterns = [
+      /\/d\/([a-zA-Z0-9_-]{10,})/,
+      /[?&]id=([a-zA-Z0-9_-]{10,})/
+    ];
+    for(const p of patterns){
+      const m = link.match(p);
+      if(m) return m[1];
+    }
+    return link.trim();
+  }
+
+  // Mengubah judul video jadi nama file (contoh: "Bercocok Tanam Part 1"
+  // -> "bercocok-tanam-part-1"). Nama file halaman video individual HARUS
+  // mengikuti pola ini juga.
+  function slugify(str){
+    return str.toLowerCase().trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
+
+  function renderFeed(){
+    const feed = document.getElementById('feed');
+    feed.innerHTML = '';
+
+    if(!VIDEOS.length){
+      feed.innerHTML = '<div class="empty">Belum ada video. Tambahkan video pertama di dalam array VIDEOS pada kode halaman ini.</div>';
+      return;
+    }
+
+    // Jumlah kolom grid yang sedang aktif menentukan seberapa sering iklan
+    // muncul: 1 kolom (mobile) -> iklan tiap 1 video, 2 kolom (tablet) ->
+    // tiap 2 video, 4 kolom (desktop) -> tiap 4 video. Dihitung sekali di
+    // awal supaya iklan tidak dimuat sia-sia untuk slot yang disembunyikan.
+    let columnsNow = 4;
+    if(window.innerWidth <= 520) columnsNow = 1;
+    else if(window.innerWidth <= 900) columnsNow = 2;
+
+    let adRowIndex = 0;
+
+    VIDEOS.forEach((v, i) => {
+      const episodeNumber = VIDEOS.length - i;
+      const isLatest = i === 0;
+      const driveId = extractDriveId(v.driveLink);
+
+      const card = document.createElement('div');
+      card.className = 'card' + (isLatest ? ' latest' : '');
+      const pageUrl = slugify(v.judul) + '.html';
+      card.innerHTML = `
+        ${isLatest ? '<span class="badge-baru">BARU</span>' : ''}
+        <a class="video-frame" href="${pageUrl}">
+          <img class="video-thumb" src="https://drive.google.com/thumbnail?id=${driveId}&sz=w1000" alt="${v.judul}" loading="lazy">
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </a>
+        <div class="card-meta">
+          <span>EP ${String(episodeNumber).padStart(2,'0')}</span>
+          <span>${v.tanggal}</span>
+        </div>
+        <h2 class="card-title"><a href="${pageUrl}" style="color:inherit;text-decoration:none;">${v.judul}</a></h2>
+        ${v.deskripsi ? `<p class="card-desc">${v.deskripsi}</p>` : ''}
+      `;
+      feed.appendChild(card);
+
+      // Iklan disisipkan tiap kali satu baris grid selesai (1 video di
+      // mobile, 2 di tablet, 4 di desktop), sebelum lanjut ke baris/video
+      // berikutnya.
+      if((i + 1) % columnsNow === 0){
+        insertAdRow(feed, adRowIndex);
+        adRowIndex++;
+      }
+    });
+  }
+
+  renderFeed();
+  renderBannerAd(document.getElementById('ad-top-728x90'), { key:'d193d159f6ead21ab2fd4d86b506bc2e', width:728, height:90 });
+  renderBannerAd(document.getElementById('ad-top-320x50'), { key:'e27a459a9e6188b68843a4fa32f52041', width:320, height:50 });
+</script>
+
+</body>
+</html>
