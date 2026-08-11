@@ -1,13 +1,25 @@
 #!/usr/bin/env python3
 """
-Generator situs Video Bercocok Tanam.
+Generator situs Bercocok Tanam Indonesia (arsitektur dynamic-fetch).
 
 Cara pakai:
     python3 generate.py
 
 Baca semua video dari videos.json, lalu otomatis membuat:
   - index.html                         (halaman utama, grid video)
-  - bercocok-tanam-part-N.html         (1 halaman per video)
+  - bercocok-tanam-indonesia-part-N.html   (1 halaman per video)
+
+Arsitektur baru: index.html dan tiap halaman video TIDAK lagi menanam
+(baked-in) daftar video di dalam file HTML-nya. Sebagai gantinya, semua
+halaman mengambil data lewat fetch('videos.json') saat dibuka di browser.
+
+Akibatnya:
+  - index.html isinya selalu sama persis setiap generate -> cukup upload
+    SEKALI saja, tidak perlu diupload ulang tiap tambah video baru.
+  - Halaman video yang SUDAH ADA juga tidak berubah isinya saat video baru
+    ditambahkan -> tidak perlu diupload ulang.
+  - Menambah video baru cukup upload: videos.json + 1 halaman video baru
+    (+ cover custom kalau ada).
 
 Tidak perlu diedit manual — cukup edit videos.json (dan taruh gambar
 cover di folder covers/ kalau mau og:image custom), lalu jalankan file
@@ -35,22 +47,6 @@ def load_videos():
         return json.load(f)
 
 
-def js_videos_array(videos):
-    """Ubah daftar video jadi teks array JavaScript untuk ditempel ke HTML."""
-    items = []
-    for v in videos:
-        drive_link = f"https://drive.google.com/file/d/{v['driveId']}/view"
-        items.append(
-            "    {\n"
-            f"      judul: {json.dumps(v['judul'], ensure_ascii=False)},\n"
-            f"      deskripsi: {json.dumps(v.get('deskripsi', ''), ensure_ascii=False)},\n"
-            f"      driveLink: {json.dumps(drive_link)},\n"
-            f"      tanggal: {json.dumps(v['tanggal'], ensure_ascii=False)}\n"
-            "    }"
-        )
-    return "const VIDEOS = [\n" + ",\n".join(items) + "\n  ];\n"
-
-
 def cover_image_url(slug, drive_id):
     """Pakai cover custom kalau filenya ada di covers/ (boleh .jpg/.jpeg/.png/.webp),
     kalau tidak ada fallback ke thumbnail otomatis Google Drive."""
@@ -61,13 +57,14 @@ def cover_image_url(slug, drive_id):
     return f"https://drive.google.com/thumbnail?id={drive_id}&sz=w1200"
 
 
-def build_index(videos):
+def build_index():
+    """index.html sekarang statis (tidak ada data video ditanam di dalamnya),
+    jadi cukup disalin langsung dari template - isinya akan selalu sama persis
+    setiap kali digenerate, tidak perlu diupload ulang kalau sudah pernah ada
+    di repo."""
     template_path = os.path.join(ROOT, "templates", "index.template.html")
     with open(template_path, "r", encoding="utf-8") as f:
         html = f.read()
-
-    marker = re.compile(r"const VIDEOS = /\*__VIDEOS_JSON__\*/\[\];\n")
-    html = marker.sub(js_videos_array(videos), html, count=1)
 
     out_path = os.path.join(ROOT, "index.html")
     with open(out_path, "w", encoding="utf-8") as f:
@@ -79,9 +76,6 @@ def build_video_pages(videos):
     template_path = os.path.join(ROOT, "templates", "video.template.html")
     with open(template_path, "r", encoding="utf-8") as f:
         template = f.read()
-
-    marker = re.compile(r"const VIDEOS = /\*__VIDEOS_JSON__\*/\[\];\n")
-    videos_js = js_videos_array(videos)
 
     for v in videos:
         slug = slugify(v["judul"])
@@ -95,7 +89,6 @@ def build_video_pages(videos):
         html = html.replace("__OG_URL__", f"{SITE_BASE_URL}{slug}.html")
         html = html.replace("__OG_IMAGE__", og_image)
         html = html.replace("__VIDEO_ID__", drive_id)
-        html = marker.sub(videos_js, html, count=1)
 
         out_path = os.path.join(ROOT, f"{slug}.html")
         with open(out_path, "w", encoding="utf-8") as f:
@@ -108,7 +101,7 @@ def main():
     if not videos:
         print("videos.json kosong, tidak ada yang digenerate.", file=sys.stderr)
         return
-    build_index(videos)
+    build_index()
     build_video_pages(videos)
 
 

@@ -310,20 +310,7 @@
      ===================================================================== */
   const CURRENT_VIDEO_ID = "1Ql5ThTmXjziyNnwdB05owd-cqRUtPyVv";
 
-  const VIDEOS = [
-    {
-      judul: "Bercocok Tanam Indonesia Part 2",
-      deskripsi: "",
-      driveLink: "https://drive.google.com/file/d/1Ql5ThTmXjziyNnwdB05owd-cqRUtPyVv/view",
-      tanggal: "11 Agustus 2026"
-    },
-    {
-      judul: "Bercocok Tanam Indonesia Part 1",
-      deskripsi: "",
-      driveLink: "https://drive.google.com/file/d/1pKgliHlixiTt-AkONp4iCTNXQuCv5WjL/view",
-      tanggal: "10 Agustus 2026"
-    }
-  ];
+  let VIDEOS = [];
 
   const BANNER_ADS = [
     { key:'0e40ba1dba3a8f141432b1fab8600c41', width:300, height:250 },
@@ -466,7 +453,10 @@
     }
   }
 
-  init();
+  fetch('videos.json')
+    .then(r => r.json())
+    .then(data => { VIDEOS = data; init(); })
+    .catch(err => console.error('Gagal memuat videos.json', err));
   renderBannerAd(document.getElementById('ad-top-728x90'), { key:'d193d159f6ead21ab2fd4d86b506bc2e', width:728, height:90 });
   renderBannerAd(document.getElementById('ad-top-320x50'), { key:'e27a459a9e6188b68843a4fa32f52041', width:320, height:50 });
 </script>
